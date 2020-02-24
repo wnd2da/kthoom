@@ -81,6 +81,7 @@ def first_menu(sub):
 # For UI (보통 웹에서 요청하는 정보에 대한 결과를 리턴한다.)
 #########################################################
 @blueprint.route('/ajax/<sub>', methods=['GET', 'POST'])
+@login_required
 def ajax(sub):
     logger.debug('AJAX %s %s', package_name, sub)
     try:
